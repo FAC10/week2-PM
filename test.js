@@ -68,3 +68,22 @@ test('stopwatch second start should change once we initiate start button and >1s
         });
       }, 1000);
     });
+
+
+        test('seconds less than 10 should have 0 displayed before them', function(assert) {
+          var expected = '01';
+          var result = addZero('1');
+          assert.equal(result, expected);
+        });
+
+        test('seconds less than 10 should have 0 displayed before them', function(assert) {
+          var expected = '09';
+          var result = addZero('9');
+          assert.equal(result, expected);
+        });
+
+        test('seconds less than 10 should have 0 displayed before them', function(assert) {
+          var expected = '20';
+          var result = addZero('20');
+          assert.equal(result, expected);
+        });
