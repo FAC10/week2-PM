@@ -69,7 +69,7 @@ test('stopwatch second start should change once we initiate start button and >1s
       }, 1000);
     });
 
-
+//Test function that converts single digits to double digits (with 0 in front)
         test('seconds less than 10 should have 0 displayed before them', function(assert) {
           var expected = '01';
           var result = addZero('1');
@@ -87,3 +87,46 @@ test('stopwatch second start should change once we initiate start button and >1s
           var result = addZero('20');
           assert.equal(result, expected);
         });
+
+        test('seconds less than 10 should have 0 displayed before them', function(assert) {
+          var expected = '20';
+          var result = addZero('20');
+          assert.equal(result, expected);
+        });
+
+  // Test function that prevents seconds from going over 60
+  //
+  // test('seconds should not go over 60', function(assert) {
+  //   var expected = ['01','00'];
+  //   var result = plusMinute(60);
+  //   assert.deepEqual(result, expected);
+  // });
+  //
+  // test('seconds should not go over 60', function(assert) {
+  //   var expected = ['01','10'];
+  //   var result = plusMinute('70');
+  //   assert.deepEqual(result, expected);
+  // });
+  //
+  // test('seconds should not go over 60', function(assert) {
+  //   var expected = ['00', '45'];
+  //   var result = plusMinute('45');
+  //   assert.deepEqual(result, expected);
+  // });
+
+
+  // Test that check that minutes are updating when seconds exceed 60
+
+  // document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
+  //   window.setTimeout( function (){
+  //
+  //
+  // // test('minutes count updates after a minute', function(assert) {
+  // //
+  // //
+  // // //   var result = parseInt(document.getElementById("stopwatch__minutes").innerHTML);
+  // // //   var expected =<60;
+  // // //   assert.equal(result, expected);
+  // // //   });
+  // // // }, 10000);
+  // // //   });
