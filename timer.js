@@ -16,3 +16,12 @@ clearInterval(start);
   });
 
 });
+
+//Reset button
+document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
+
+document.getElementById('stopwatch__hours').innerHTML="00";
+document.getElementById('stopwatch__minutes').innerHTML="00";
+document.getElementById('stopwatch__seconds').innerHTML="00";
+
+});
