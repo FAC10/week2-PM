@@ -14,6 +14,14 @@ var minutes = document.getElementById('stopwatch__minutes').innerHTML;
 		return minutes;
 }
 
+function plusHour() {
+var hours = document.getElementById('stopwatch__hours').innerHTML;
+    hours = parseInt(hours);
+    hours ++;
+    hours = addZero(hours);
+		return hours;
+}
+
 document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
 start = setInterval(stopwatch__start, 1000);
 function stopwatch__start() {
@@ -26,6 +34,14 @@ function stopwatch__start() {
 	var minutes = document.getElementById('stopwatch__minutes').innerHTML;
 	document.getElementById('stopwatch__minutes').innerHTML = plusMinute();
 	resetSecs();
+	if (minutes = 59) {
+	var hours = document.getElementById('stopwatch__hours').innerHTML;
+	document.getElementById('stopwatch__hours').innerHTML = plusHour();
+	resetMins();
+	}
+	if (hours = 23) {
+	resetHours();
+	}
 }
 }
 
