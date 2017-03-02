@@ -117,3 +117,5 @@ test('seconds should not go over 60', function (assert) {
 var expected = document.getElementById('stopwatch__seconds').innerHTML > 59;
 
 ```
+
+* Testing minutes and hours - we changed seconds, minutes and hours manually to 23:59:55 in the HTML file to test functionality without waiting
