@@ -1,0 +1,26 @@
+{
+  "name": "pm",
+  "version": "1.0.0",
+  "description": "stopwatch",
+  "main": "test.js",
+  "dependencies": {
+    "live-server": "^1.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC10/week2-PM.git"
+  },
+  "keywords": [
+    "stopwatch"
+  ],
+  "author": "maja and philippa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC10/week2-PM/issues"
+  },
+  "homepage": "https://github.com/FAC10/week2-PM#readme"
+}
