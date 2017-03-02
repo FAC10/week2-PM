@@ -54,11 +54,13 @@ test('stopwatch should be showing zeros when the page is loaded', function(asser
       assert.equal(result, expected);
       });
 
-      }); ```
+      });
+
+      ```
 
 * We found and interesting way of comparing BEFORE and AFTER events in testing:
 
-```Javascript
+``` Javascript
 document.getElementById('stopwatch__buttons__stop').addEventListener("click", function(){
   // Hours
       var expectedHours = document.getElementById("stopwatch__hours").innerHTML;
@@ -89,3 +91,29 @@ document.getElementById('stopwatch__buttons__stop').addEventListener("click", fu
   });
 ```       
 *Note: There might be better ways of doing this and we welcome any suggestions on how other groups have solved similar issues*
+
+* We've learnt that we can set intervals on tests to repeat them
+
+``` Javascript
+document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
+
+window.setInterval( function (){
+
+test('seconds should not go over 60', function (assert) {
+  var expected = document.getElementById('stopwatch__seconds').innerHTML > 59;
+  var result = false;
+  assert.equal(result, expected);
+
+});
+
+}, 20000);
+
+});
+```
+* We also learnt how to test for less than/greater than conditions:
+
+``` Javascript
+
+var expected = document.getElementById('stopwatch__seconds').innerHTML > 59;
+
+```
