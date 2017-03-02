@@ -3,20 +3,20 @@
 // Checks reset when 'Reset' button is clicked
 
 document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
-test('stopwatch should reeset when reset button is clicked', function(assert) {
-  var result = reset(document.getElementById("stopwatch__hours").innerHTML);
+test('stopwatch should reset when reset button is clicked', function(assert) {
+  var result = document.getElementById("stopwatch__hours").innerHTML;
   var expected = "00";
   assert.equal(result, expected);
   });
 
-test('stopwatch should reeset when reset button is clicked', function(assert) {
-  var result = reset(document.getElementById("stopwatch__minutes").innerHTML);
+test('stopwatch should reset when reset button is clicked', function(assert) {
+  var result = document.getElementById("stopwatch__minutes").innerHTML;
     var expected = "00";
     assert.equal(result, expected);
     });
 
-  test('stopwatch should reeset when reset button is clicked', function(assert) {
-      var result = reset(document.getElementById("stopwatch__seconds").innerHTML);
+  test('stopwatch should reset when reset button is clicked', function(assert) {
+      var result = document.getElementById("stopwatch__seconds").innerHTML;
       var expected = "00";
       assert.equal(result, expected);
       });
@@ -167,5 +167,34 @@ test('hours should not go over 23', function (assert) {
 });
 
 }, 3600000);
+
+});
+
+// Checks that clone function copies element
+
+var lapClicks = 0;
+
+document.getElementById('stopwatch__buttons__lap').addEventListener("click", function(){
+
+lapClicks ++;
+
+test('element should be duplicated', function(assert) {
+  clone(document.getElementById('cloneTest'));
+  var expected = 2*lapClicks;
+  var result = document.getElementById('cloned').childElementCount;
+  assert.equal(result, expected);
+});
+
+});
+
+// Checks that reset button removes all laps
+
+document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
+
+test('reset button removes children from cloned (lap) section', function(assert) {
+  var expected = 0;
+  var result = lapRemove();
+  assert.equal(result, expected);
+});
 
 });
