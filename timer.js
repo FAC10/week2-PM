@@ -29,6 +29,7 @@ var hours = document.getElementById('stopwatch__hours').innerHTML;
 // Manipulating DOM
 
 document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
+clearInterval(start);
 start = setInterval(stopwatch__start, 1000);
 function stopwatch__start() {
   var seconds = document.getElementById('stopwatch__seconds').innerHTML;
