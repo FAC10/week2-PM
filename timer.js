@@ -18,17 +18,12 @@ function addZero(num)
 
 // }
 
-function plusMinute(secs) {
-  if (secs > 59) {
-
-    resetSecs();
-    var minutes = document.getElementById('stopwatch__minutes').innerHTML;
+function plusMinute() {
+var minutes = document.getElementById('stopwatch__minutes').innerHTML;
     minutes = parseInt(minutes);
     minutes ++;
     minutes = addZero(minutes);
-    document.getElementById('stopwatch__minutes').innerHTML = minutes;
-
-}
+		return minutes;
 }
 
 document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
@@ -39,8 +34,11 @@ function stopwatch__start() {
   seconds ++;
   seconds = addZero(seconds);
   document.getElementById('stopwatch__seconds').innerHTML = seconds;
-  plusMinute(seconds);
-
+	if (seconds > 59) {
+	var minutes = document.getElementById('stopwatch__minutes').innerHTML;
+	document.getElementById('stopwatch__minutes').innerHTML = plusMinute();
+	resetSecs();
+}
 }
 
 document.getElementById('stopwatch__buttons__stop').addEventListener("click", function(){
