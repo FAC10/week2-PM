@@ -94,39 +94,53 @@ test('stopwatch second start should change once we initiate start button and >1s
           assert.equal(result, expected);
         });
 
-  // Test function that prevents seconds from going over 60
-  //
-  // test('seconds should not go over 60', function(assert) {
-  //   var expected = ['01','00'];
-  //   var result = plusMinute(60);
-  //   assert.deepEqual(result, expected);
-  // });
-  //
-  // test('seconds should not go over 60', function(assert) {
-  //   var expected = ['01','10'];
-  //   var result = plusMinute('70');
-  //   assert.deepEqual(result, expected);
-  // });
-  //
-  // test('seconds should not go over 60', function(assert) {
-  //   var expected = ['00', '45'];
-  //   var result = plusMinute('45');
-  //   assert.deepEqual(result, expected);
-  // });
+  // Test that seconds don't rise above 60
 
+  document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
 
-  // Test that check that minutes are updating when seconds exceed 60
+  window.setInterval( function (){
 
-  // document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
-  //   window.setTimeout( function (){
-  //
-  //
-  // // test('minutes count updates after a minute', function(assert) {
-  // //
-  // //
-  // // //   var result = parseInt(document.getElementById("stopwatch__minutes").innerHTML);
-  // // //   var expected =<60;
-  // // //   assert.equal(result, expected);
-  // // //   });
-  // // // }, 10000);
-  // // //   });
+  test('seconds should not go over 60', function (assert) {
+    var expected = document.getElementById('stopwatch__seconds').innerHTML > 59;
+    var result = false;
+    assert.equal(result, expected);
+
+  });
+
+}, 20000);
+
+});
+
+// Test that minutes don't rise above 60
+
+document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
+
+window.setInterval( function (){
+
+test('minutes should not go over 60', function (assert) {
+  var expected = document.getElementById('stopwatch__minutes').innerHTML > 59;
+  var result = false;
+  assert.equal(result, expected);
+
+});
+
+}, 60000);
+
+});
+
+// Test that hours don't rise above 23
+
+document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
+
+window.setInterval( function (){
+
+test('hours should not go over 23', function (assert) {
+  var expected = document.getElementById('stopwatch__hours').innerHTML > 23;
+  var result = false;
+  assert.equal(result, expected);
+
+});
+
+}, 3600000);
+
+});
