@@ -41,12 +41,13 @@ function stopwatch__start() {
 	var minutes = document.getElementById('stopwatch__minutes').innerHTML;
 	document.getElementById('stopwatch__minutes').innerHTML = plusMinute();
 	reset(document.getElementById('stopwatch__seconds'));
-	if (minutes = 59) {
+	if (minutes === '59') {
+		console.log('minutes are 59');
 	var hours = document.getElementById('stopwatch__hours').innerHTML;
 	document.getElementById('stopwatch__hours').innerHTML = plusHour();
 	reset(document.getElementById('stopwatch__minutes'));
 	}
-	if (hours = 23) {
+	if (hours === '23') {
 	reset(document.getElementById('stopwatch__hours'));
 	}
 }
