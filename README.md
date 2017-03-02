@@ -119,3 +119,20 @@ var expected = document.getElementById('stopwatch__seconds').innerHTML > 59;
 ```
 
 * Testing minutes and hours - we changed seconds, minutes and hours manually to 23:59:55 in the HTML file to test functionality without waiting
+
+* Using BlanketJS has uncovered that although our tests cover most functionalities, many of them are not recognised by Blanket
+
+* Code coverage also changes depending on certain DOM events (and number of related tests that get executed)
+
+* We found a way of testing some functions (and having Blanket recognise them as valid tests) by using hidden HTML elements. (This is probably not best practice!)
+
+``` HTML
+<section id = 'tests'>
+
+  <span id = 'resetTest__45'>45</span>:
+  <span id = 'resetTest__01'>01</span>:
+  <span id = 'resetTest__60'>60</span>
+  <span id = 'cloneTest'>Clone me</span>
+
+</section>
+```
