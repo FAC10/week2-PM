@@ -6,18 +6,6 @@ function addZero(num)
 	return num;
 };
 
-//
-// function plusMinute(minutes, seconds){
-//   if (seconds>59){
-//     resetSecs();
-//     minutes = parseInt(minutes);
-//     minutes ++;
-//     minutes = addZero(minutes);
-//     console.log(minutes);
-//   }
-
-// }
-
 function plusMinute() {
 var minutes = document.getElementById('stopwatch__minutes').innerHTML;
     minutes = parseInt(minutes);
@@ -42,7 +30,6 @@ function stopwatch__start() {
 }
 
 document.getElementById('stopwatch__buttons__stop').addEventListener("click", function(){
-console.log(start);
 clearInterval(start);
   });
 
