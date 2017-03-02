@@ -3,25 +3,50 @@
 // Checks reset when 'Reset' button is clicked
 
 document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
-test('stopwatch should be showing zeros when the page is loaded', function(assert) {
-  var result = document.getElementById("stopwatch__hours").innerHTML;
+test('stopwatch should reeset when reset button is clicked', function(assert) {
+  var result = reset(document.getElementById("stopwatch__hours").innerHTML);
   var expected = "00";
   assert.equal(result, expected);
   });
 
-test('stopwatch should be showing zeros when the page is loaded', function(assert) {
-  var result = document.getElementById("stopwatch__minutes").innerHTML;
+test('stopwatch should reeset when reset button is clicked', function(assert) {
+  var result = reset(document.getElementById("stopwatch__minutes").innerHTML);
     var expected = "00";
     assert.equal(result, expected);
     });
 
-  test('stopwatch should be showing zeros when the page is loaded', function(assert) {
-      var result = document.getElementById("stopwatch__seconds").innerHTML;
+  test('stopwatch should reeset when reset button is clicked', function(assert) {
+      var result = reset(document.getElementById("stopwatch__seconds").innerHTML);
       var expected = "00";
       assert.equal(result, expected);
       });
 
       });
+
+// Checks reset function specifically
+
+test('reset function changes 45 to 00', function(assert) {
+  reset(document.getElementById('resetTest__45'));
+  var result = document.getElementById('resetTest__45').innerHTML;
+  var expected = "00";
+  assert.equal(result, expected);
+  });
+
+  test('reset function changes 01 to 00', function(assert) {
+    reset(document.getElementById('resetTest__01'));
+    var result = document.getElementById('resetTest__01').innerHTML;
+    var expected = "00";
+    assert.equal(result, expected);
+  });
+
+test('reset function changes 60 to 00', function(assert) {
+  reset(document.getElementById('resetTest__60'));
+  var result = document.getElementById('resetTest__60').innerHTML;
+  var expected = "00";
+  assert.equal(result, expected);
+  });
+
+
 
 // Checks behaviour of start button
 document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){

@@ -1,10 +1,12 @@
-
+//Adding 0 on numbers below 10
 
 function addZero(num)
 {
 	(String(num).length < 2) ? num = String("0" + num) :  num = String(num);
 	return num;
 };
+
+//incrementing minutes
 
 function plusMinute() {
 var minutes = document.getElementById('stopwatch__minutes').innerHTML;
@@ -14,6 +16,8 @@ var minutes = document.getElementById('stopwatch__minutes').innerHTML;
 		return minutes;
 }
 
+//incrementing hours
+
 function plusHour() {
 var hours = document.getElementById('stopwatch__hours').innerHTML;
     hours = parseInt(hours);
@@ -21,6 +25,8 @@ var hours = document.getElementById('stopwatch__hours').innerHTML;
     hours = addZero(hours);
 		return hours;
 }
+
+// Manipulating DOM
 
 document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
 start = setInterval(stopwatch__start, 1000);
@@ -33,17 +39,19 @@ function stopwatch__start() {
 	if (seconds > 59) {
 	var minutes = document.getElementById('stopwatch__minutes').innerHTML;
 	document.getElementById('stopwatch__minutes').innerHTML = plusMinute();
-	resetSecs();
+	reset(document.getElementById('stopwatch__seconds'));
 	if (minutes = 59) {
 	var hours = document.getElementById('stopwatch__hours').innerHTML;
 	document.getElementById('stopwatch__hours').innerHTML = plusHour();
-	resetMins();
+	reset(document.getElementById('stopwatch__minutes'));
 	}
 	if (hours = 23) {
-	resetHours();
+	reset(document.getElementById('stopwatch__hours'));
 	}
 }
 }
+
+// Stopping on 'Stop'
 
 document.getElementById('stopwatch__buttons__stop').addEventListener("click", function(){
 clearInterval(start);
@@ -53,20 +61,12 @@ clearInterval(start);
 
 //Reset button
 
-function resetSecs() {
-  document.getElementById('stopwatch__seconds').innerHTML="00";
+function reset(n) {
+  n.innerHTML="00";
 }
 
-function resetMins() {
-  document.getElementById('stopwatch__minutes').innerHTML="00";
-}
-
-function resetHours() {
-  document.getElementById('stopwatch__hours').innerHTML="00";
-}
-
-document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
-resetHours();
-resetMins();
-resetSecs();
+document.getElementById('stopwatch__buttons__reset').addEventListener("click", function (){
+reset(document.getElementById('stopwatch__hours'));
+reset(document.getElementById('stopwatch__minutes'));
+reset(document.getElementById('stopwatch__seconds'));
 });
