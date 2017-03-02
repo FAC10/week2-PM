@@ -65,7 +65,7 @@ function reset(n) {
   n.innerHTML="00";
 }
 
-document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
+document.getElementById('stopwatch__buttons__reset').addEventListener("click", function (){
 reset(document.getElementById('stopwatch__hours'));
 reset(document.getElementById('stopwatch__minutes'));
 reset(document.getElementById('stopwatch__seconds'));
