@@ -39,14 +39,14 @@ function stopwatch__start() {
 	if (seconds > 59) {
 	var minutes = document.getElementById('stopwatch__minutes').innerHTML;
 	document.getElementById('stopwatch__minutes').innerHTML = plusMinute();
-	resetSecs();
+	reset(document.getElementById('stopwatch__seconds'));
 	if (minutes = 59) {
 	var hours = document.getElementById('stopwatch__hours').innerHTML;
 	document.getElementById('stopwatch__hours').innerHTML = plusHour();
-	resetMins();
+	reset(document.getElementById('stopwatch__minutes'));
 	}
 	if (hours = 23) {
-	resetHours();
+	reset(document.getElementById('stopwatch__hours'));
 	}
 }
 }
@@ -61,20 +61,12 @@ clearInterval(start);
 
 //Reset button
 
-function resetSecs() {
-  document.getElementById('stopwatch__seconds').innerHTML="00";
-}
-
-function resetMins() {
-  document.getElementById('stopwatch__minutes').innerHTML="00";
-}
-
-function resetHours() {
-  document.getElementById('stopwatch__hours').innerHTML="00";
+function reset(n) {
+  n.innerHTML="00";
 }
 
 document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
-resetHours();
-resetMins();
-resetSecs();
+reset(document.getElementById('stopwatch__hours'));
+reset(document.getElementById('stopwatch__minutes'));
+reset(document.getElementById('stopwatch__seconds'));
 });
