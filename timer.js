@@ -69,4 +69,29 @@ document.getElementById('stopwatch__buttons__reset').addEventListener("click", f
 reset(document.getElementById('stopwatch__hours'));
 reset(document.getElementById('stopwatch__minutes'));
 reset(document.getElementById('stopwatch__seconds'));
+clearInterval(start);
+lapRemove();
 });
+
+//Clones element passed in
+
+function clone(element) {
+	var clone = element.cloneNode(true);
+	document.getElementById('cloned').appendChild(clone);
+}
+
+//Lap button clones display
+
+document.getElementById('stopwatch__buttons__lap').addEventListener("click", function (){
+clone(document.getElementById('display'));
+});
+
+// Removes children in lap section on reset
+
+function lapRemove() {
+	var cloneSection = document.getElementById('cloned');
+	while (cloneSection.childElementCount > 0) {
+		cloneSection.removeChild(cloneSection.firstChild);
+	}
+	return cloneSection.childElementCount;
+}
