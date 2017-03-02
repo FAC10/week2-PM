@@ -101,7 +101,7 @@ test('stopwatch second start should change once we initiate start button and >1s
   window.setInterval( function (){
 
   test('seconds should not go over 60', function (assert) {
-    var expected = document.getElementById('stopwatch__seconds').innerHTML > 60;
+    var expected = document.getElementById('stopwatch__seconds').innerHTML > 59;
     var result = false;
     assert.equal(result, expected);
 
@@ -118,7 +118,7 @@ document.getElementById('stopwatch__buttons__start').addEventListener("click", f
 window.setInterval( function (){
 
 test('minutes should not go over 60', function (assert) {
-  var expected = document.getElementById('stopwatch__minutes').innerHTML > 60;
+  var expected = document.getElementById('stopwatch__minutes').innerHTML > 59;
   var result = false;
   assert.equal(result, expected);
 
