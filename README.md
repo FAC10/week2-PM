@@ -136,3 +136,21 @@ var expected = document.getElementById('stopwatch__seconds').innerHTML > 59;
 
 </section>
 ```
+
+``` Javascript
+
+var lapClicks = 0;
+
+document.getElementById('stopwatch__buttons__lap').addEventListener("click", function(){
+
+lapClicks ++;
+
+test('element should be duplicated', function(assert) {
+  clone(document.getElementById('cloneTest'));
+  var expected = 2*lapClicks;
+  var result = document.getElementById('cloned').childElementCount;
+  assert.equal(result, expected);
+});
+
+});
+```
