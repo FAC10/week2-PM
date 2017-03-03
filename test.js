@@ -1,7 +1,6 @@
 
 
 // Checks reset when 'Reset' button is clicked
-
 document.getElementById('stopwatch__buttons__reset').addEventListener("click", function(){
 test('stopwatch should reset when reset button is clicked', function(assert) {
   var result = document.getElementById("stopwatch__hours").innerHTML;
@@ -21,8 +20,8 @@ test('stopwatch should reset when reset button is clicked', function(assert) {
       assert.equal(result, expected);
       });
 
-      });
-
+  });
+  
 // Checks reset function specifically
 
 test('reset function changes 45 to 00', function(assert) {
