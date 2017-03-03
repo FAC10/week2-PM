@@ -1,6 +1,7 @@
 //Adding 0 on numbers below 10
 function addZero(num) {
     (String(num).length < 2) ? num = String("0" + num): num = String(num);
+
     return num;
 };
 
