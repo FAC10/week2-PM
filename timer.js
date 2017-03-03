@@ -30,7 +30,7 @@ var hours = document.getElementById('stopwatch__hours').innerHTML;
 
 document.getElementById('stopwatch__buttons__start').addEventListener("click", function(){
 clearInterval(start);
-start = setInterval(stopwatch__start, 1000);
+var start = setInterval(stopwatch__start, 1000);
 function stopwatch__start() {
   var seconds = document.getElementById('stopwatch__seconds').innerHTML;
   seconds = parseInt(seconds);
@@ -94,6 +94,7 @@ function lapRemove() {
 	var cloneSection = document.getElementById('cloned');
 	while (cloneSection.childElementCount > 0) {
 		cloneSection.removeChild(cloneSection.firstChild);
+		console.log(cloneSection);
 	}
 	return cloneSection.childElementCount;
 }
