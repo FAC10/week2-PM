@@ -154,8 +154,3 @@ test('element should be duplicated', function(assert) {
 
 });
 ```
-
-test
-
-
-ehvwklehblqwjvno;qO
